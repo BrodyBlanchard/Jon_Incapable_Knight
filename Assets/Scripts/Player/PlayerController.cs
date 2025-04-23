@@ -146,6 +146,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Opens and closes pause menu
+    /// </summary>
     private void OnPause()
     {
         if(pauseMenu.activeSelf)
@@ -169,11 +172,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// CHEAT
+    /// Adds 10 xp on = press
+    /// </summary>
     private void OnAddXP()
     {
         gm.sm.xp += 10;
     }
 
+    /// <summary>
+    /// CHEAT
+    /// Adds one level on ] press
+    /// </summary>
     private void OnAddLevel()
     {
         gm.sm.xp = gm.sm.xpCeiling;

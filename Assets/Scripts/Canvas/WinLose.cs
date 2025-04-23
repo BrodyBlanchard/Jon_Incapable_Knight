@@ -12,11 +12,17 @@ using UnityEngine.SceneManagement;
 
 public class WinLose : MonoBehaviour
 {
+    /// <summary>
+    /// Quits the game
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();
     }
 
+    /// <summary>
+    /// Restarts the game
+    /// </summary>
     public void RestartGame()
     {
         SceneManager.LoadScene(0);

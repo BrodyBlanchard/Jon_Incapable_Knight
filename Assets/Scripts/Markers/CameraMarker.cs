@@ -11,5 +11,5 @@ using UnityEngine;
 
 public class CameraMarker : MonoBehaviour
 {
-    //i gotta find a better way to do this. it works though
+
 }

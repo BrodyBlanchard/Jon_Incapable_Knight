@@ -31,16 +31,25 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<PlayerController>().playing = true;
     }
 
+    /// <summary>
+    /// Opens the credits (unfinished)
+    /// </summary>
     public void CreditsButton()
     {
         creditsScreen.SetActive(true);
     }
 
+    /// <summary>
+    /// Opens the how to play menu
+    /// </summary>
     public void HowToPlayButton()
     {
         hTPScreen.SetActive(true);
     }
 
+    /// <summary>
+    /// Quits the game
+    /// </summary>
     public void QuitButton()
     {
         Application.Quit();

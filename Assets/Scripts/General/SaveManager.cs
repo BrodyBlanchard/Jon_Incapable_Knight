@@ -13,6 +13,7 @@ using TMPro;
 
 public class SaveManager : MonoBehaviour
 {
+    //singleton 
     public static SaveManager Instance;
 
     private void Awake()
@@ -46,11 +47,10 @@ public class SaveManager : MonoBehaviour
     public int health;
 
     /// <summary>
-    /// prepares variables for gameplay, along with the start menu
+    /// does the first time preparations of variables, then starts setup thats called every restart
     /// </summary>
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
         xp = 0;
         level = 1;
         xpCeiling = 10;
@@ -61,17 +61,22 @@ public class SaveManager : MonoBehaviour
         StartCoroutine(SMStart());
     }
 
+    /// <summary>
+    /// Syncs data to GameManager then assigns everything else
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator SMStart()
     {
         SMSync();
-        print("fuck");
 
         yield return new WaitForSeconds(0.5f);
 
         SMAssign();
-        print("shit");
     }
 
+    /// <summary>
+    /// Syncing what stats were before restarting
+    /// </summary>
     public void SMSync()
     {
         gm = FindObjectOfType<GameManager>();
@@ -80,6 +85,9 @@ public class SaveManager : MonoBehaviour
         gm.health = health;
     }
 
+    /// <summary>
+    /// Gives the stats their purpose in level ups and counts how many loads there have been
+    /// </summary>
     public void SMAssign()
     {
         gm.pc.throwStrength = 12 + (strength * 3);
@@ -93,7 +101,7 @@ public class SaveManager : MonoBehaviour
     }
 
     /// <summary>
-    /// handles leveling up, gui maintainence, and the win condition
+    /// handles leveling up and gui maintainence
     /// </summary>
     private void Update()
     {

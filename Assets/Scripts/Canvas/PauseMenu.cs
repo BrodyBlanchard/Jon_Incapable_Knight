@@ -17,11 +17,17 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject GUI;
     [SerializeField] private PlayerController pc;
 
+    /// <summary>
+    /// Assigns our player controller
+    /// </summary>
     private void Start()
     {
         pc = FindObjectOfType<PlayerController>();
     }
 
+    /// <summary>
+    /// Unpauses the game
+    /// </summary>
     public void ResumeButton()
     {
         Time.timeScale = 1;
@@ -31,12 +37,18 @@ public class PauseMenu : MonoBehaviour
         pc.playing = true;
     }
 
+    /// <summary>
+    /// Restarts the game
+    /// </summary>
     public void RestartButton()
     {
         SceneManager.LoadScene(0);
         GUI.SetActive(true);
     }
 
+    /// <summary>
+    /// Returns to the main menu
+    /// </summary>
     public void MainMenuButton()
     {
         mainMenu.SetActive(true);

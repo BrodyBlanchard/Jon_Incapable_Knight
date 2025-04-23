@@ -50,6 +50,10 @@ public class PickupController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gives damages based on the player's throwing strength
+    /// </summary>
+    /// <param name="throwStrength">player's throwing strength, used to calculate damage</param>
     public void Throw(float throwStrength)
     {
         damage = throwStrength * weight;

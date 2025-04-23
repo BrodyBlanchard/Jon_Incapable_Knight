@@ -4,7 +4,7 @@
 // Creation Date : 3/31/2024
 //
 // Brief Description : Handles all general game data and systems, including 
-    lives, gui, winning and losing.
+    lives, gui, winning and losing, and wave management.
 *****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         //this is so picked up objects dont collide with the player
         Physics.IgnoreLayerCollision(6, 7, true);
+        //Starts SMStart on reload
         if(sm.load > 0)
         {
             StartCoroutine(sm.SMStart());
@@ -86,6 +87,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles beating a wave
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WaveAdvance()
     {
         if (wave == 2)

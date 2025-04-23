@@ -3,7 +3,7 @@
 // Author : Brody Blanchard
 // Creation Date : 3/31/2024
 //
-// Brief Description : Handles enemy spawning
+// Brief Description : Handles enemy spawning and waves
 *****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +50,8 @@ public class SpawnerScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Spawns enemies based on the spawn amount on a random interval, and keeps a tally of how many enemies are spawned
+    /// Spawns enemies based on the spawn amount on a random interval, and keeps a tally of how many 
+    /// civilians are spawned
     /// </summary>
     /// <returns></returns>
     private IEnumerator Spawning()
