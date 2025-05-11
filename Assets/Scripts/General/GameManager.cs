@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text xpText;
     [SerializeField] private GameObject wave1Complete;
     [SerializeField] private GameObject wave2Complete;
+    [SerializeField] private TMP_Text killCounter;
 
     /// <summary>
     /// prepares variables for gameplay, along with the start menu
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
         {
             Win();
         }
+        killCounter.text = killCount + " / " + enemyCount; 
     }
 
     /// <summary>
